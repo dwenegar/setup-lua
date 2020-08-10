@@ -1,0 +1,20 @@
+
+name: 'Setup Lua'
+description: 'Set up a specific version of Lua and, optionally, Luarocks, and update the system environment variables.'
+author: 'dwenegar'
+branding:
+  icon: moon
+  color: blue
+inputs:
+  lua-version:
+    description: 'Lua version to use.'
+    required: false
+    default: 'latest'
+  luarocks-version:
+    description: 'Luarocks version to use.'
+    required: false
+    default: 'none'
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
