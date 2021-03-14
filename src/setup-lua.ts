@@ -7,9 +7,20 @@ import {execSync} from 'child_process';
 
 import * as sys from './system';
 
+function exportVariable(name: string, value: string) {
+  core.exportVariable(name, value);
+  core.info(`Set ${name} to ${process.env[name]}`);
+}
+
+function addPath(value: string) {
+  core.addPath(value);
+  core.info(`Added ${value} to PATH`);
+}
+
 export async function setupLua() {
   try {
     const inputs = getInputs();
+    const platform = sys.getPlatform();
 
     const installPrefix = join(process.cwd(), '.install');
     const luaInstallPath = join(installPrefix);
@@ -18,32 +29,31 @@ export async function setupLua() {
     const luaVersion = inputs.luaVersion;
     core.info(`Setup Lua version ${luaVersion}`);
 
-    const luaPath = await installLua(luaVersion, luaInstallPath);
+    const luaPath = await installLua(inputs.repoToken, luaVersion, luaInstallPath);
+
     const luaBinPath = join(luaPath, 'bin');
-    core.addPath(luaBinPath);
-    core.info(`Added ${luaBinPath} to the path`);
+    addPath(luaBinPath);
+
+    if (platform == 'linux' || platform == 'darwin') {
+      exportVariable('LD_LIBRARY_PATH', luaBinPath);
+    }
 
     const luarocksVersion = inputs.luarocksVersion;
     if (luarocksVersion) {
       core.info(`Setup Luarocks version ${luarocksVersion}`);
-      const luarocksPath = await installLuarocks(luarocksVersion, luarocksInstallPath, luaPath);
+      const luarocksPath = await installLuarocks(inputs.repoToken, luarocksVersion, luarocksInstallPath, luaPath);
 
-      const platform = sys.getPlatform();
       const luarocksBinPath = platform === 'windows' ? luarocksPath : join(luarocksPath, 'bin');
-      core.addPath(luarocksBinPath);
-      core.info(`Added ${luarocksBinPath} to the path`);
+      addPath(luarocksBinPath);
 
       let luarocksSystemPath = execSync('luarocks path --lr-bin', {encoding: 'utf-8'}).trim();
-      core.addPath(luarocksSystemPath);
-      core.info(`Added ${luarocksSystemPath} to the path`);
+      addPath(luarocksSystemPath);
 
       let luarocksLuaPath = execSync('luarocks path --lr-path', {encoding: 'utf-8'}).trim();
-      core.exportVariable('LUA_PATH', ';;' + luarocksLuaPath);
-      core.info(`Set LUA_PATH to ${luarocksLuaPath}`);
+      exportVariable('LUA_PATH', luarocksLuaPath);
 
       let luarocksLuaCPath = execSync('luarocks path --lr-cpath', {encoding: 'utf-8'}).trim();
-      core.exportVariable('LUA_CPATH', ';;' + luarocksLuaCPath);
-      core.info(`Set LUA_CPATH to ${luarocksLuaCPath}`);
+      exportVariable('LUA_CPATH', luarocksLuaCPath);
 
       core.info(`Successfully setup Luarocks ${luarocksVersion}`);
     }

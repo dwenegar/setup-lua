@@ -23,6 +23,7 @@ const LUAROCKS_VERSION_ALIASES: {[index: string]: string} = {
 export function getInputs(): Inputs {
   const luaVersion = getInput(InputNames.LuaVersion, {required: true});
   const luarocksVersion = getInput(InputNames.LuarocksVersion, {required: false});
+  const repoToken = getInput(InputNames.RepoToken, {required: true});
 
   let resolvedLuaVersion = luaVersion;
   if (LUA_VERSION_ALIASES[luaVersion]) {
@@ -35,6 +36,7 @@ export function getInputs(): Inputs {
 
   return {
     luaVersion: resolvedLuaVersion,
-    luarocksVersion: resolvedLuarocksVersion
+    luarocksVersion: resolvedLuarocksVersion,
+    repoToken: repoToken
   };
 }

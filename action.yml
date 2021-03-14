@@ -6,6 +6,9 @@ branding:
   icon: moon
   color: blue
 inputs:
+  repo-token:
+    description: 'The GITHUB_TOKEN secret'
+    required: false
   lua-version:
     description: 'Lua version to use.'
     required: false
