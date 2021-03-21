@@ -5087,17 +5087,11 @@ exports.getInputs = void 0;
 const core_1 = __webpack_require__(470);
 const constants_1 = __webpack_require__(32);
 const LUA_VERSION_ALIASES = {
-    '5.1': '5.1.5',
-    '5.2': '5.2.4',
     '5.3': '5.3.6',
     '5.4': '5.4.2',
     latest: '5.4.2'
 };
 const LUAROCKS_VERSION_ALIASES = {
-    '3.0': '3.0.4',
-    '3.1': '3.1.3',
-    '3.2': '3.2.1',
-    '3.3': '3.3.1',
     '3.4': '3.4.0',
     '3.5': '3.5.0',
     latest: '3.5.0'
