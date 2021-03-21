@@ -34,10 +34,6 @@ export async function setupLua() {
     const luaBinPath = join(luaPath, 'bin');
     addPath(luaBinPath);
 
-    if (platform == 'linux' || platform == 'darwin') {
-      exportVariable('LD_LIBRARY_PATH', luaBinPath);
-    }
-
     const luarocksVersion = inputs.luarocksVersion;
     if (luarocksVersion) {
       core.info(`Setup Luarocks version ${luarocksVersion}`);

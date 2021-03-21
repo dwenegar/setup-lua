@@ -1505,9 +1505,6 @@ async function setupLua() {
         const luaPath = await installer_1.installLua(inputs.repoToken, luaVersion, luaInstallPath);
         const luaBinPath = path_1.join(luaPath, 'bin');
         addPath(luaBinPath);
-        if (platform == 'linux' || platform == 'darwin') {
-            exportVariable('LD_LIBRARY_PATH', luaBinPath);
-        }
         const luarocksVersion = inputs.luarocksVersion;
         if (luarocksVersion) {
             core.info(`Setup Luarocks version ${luarocksVersion}`);
