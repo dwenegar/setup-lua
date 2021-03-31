@@ -4,8 +4,8 @@ import {Inputs} from './inputs';
 
 const LUA_VERSION_ALIASES: {[index: string]: string} = {
   '5.3': '5.3.6',
-  '5.4': '5.4.2',
-  latest: '5.4.2'
+  '5.4': '5.4.3',
+  latest: '5.4.3'
 };
 
 const LUAROCKS_VERSION_ALIASES: {[index: string]: string} = {

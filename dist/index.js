@@ -5085,8 +5085,8 @@ const core_1 = __webpack_require__(470);
 const constants_1 = __webpack_require__(32);
 const LUA_VERSION_ALIASES = {
     '5.3': '5.3.6',
-    '5.4': '5.4.2',
-    latest: '5.4.2'
+    '5.4': '5.4.3',
+    latest: '5.4.3'
 };
 const LUAROCKS_VERSION_ALIASES = {
     '3.4': '3.4.0',

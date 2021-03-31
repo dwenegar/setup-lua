@@ -1,8 +1,6 @@
-import * as github from '@actions/github';
 import * as tc from '@actions/tool-cache';
 import * as core from '@actions/core';
 import * as exec from '@actions/exec';
-import * as httpm from '@actions/http-client';
 
 import * as path from 'path';
 import * as os from 'os';
