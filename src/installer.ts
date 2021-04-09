@@ -1,9 +1,9 @@
 import * as tc from '@actions/tool-cache';
 import * as core from '@actions/core';
 import * as exec from '@actions/exec';
-
 import * as path from 'path';
 import * as os from 'os';
+import * as semver from 'semver';
 
 import * as sys from './system';
 
@@ -20,7 +20,9 @@ function getLuaDownloadUrl(version: string): string {
   const arch: string = sys.getArch();
   const archiveSuffix = sys.getArchiveSuffix();
   const targetAssetName: string = `lua-${version}-${platform}-${arch}.${archiveSuffix}`;
-  return `https://github.com/luadevkit/versions/releases/download/v${version}/${targetAssetName}`;
+  const major = semver.major(version);
+  const minor = semver.minor(version);
+  return `https://github.com/luadevkit/lua${major}${minor}/releases/download/v${version}/${targetAssetName}`;
 }
 
 function getLuarocksDownloadUrl(version: string): string {
