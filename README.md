@@ -8,7 +8,7 @@ This action sets up a Lua environment by building a version of Lua and adding it
 
 See [action.yml](action.yml)
 
-Install the default version of Lua (5.4) and LuaRocks (3.3.1).
+Install the default version of Lua (5.4) and LuaRocks (3.4.0).
 
 ```yaml
 - uses: luadevkit/setup-lua
@@ -19,8 +19,8 @@ Install specific version of Lua and LuaRocks:
 ```yaml
 - uses: luadevkit/setup-lua
   with:
-    lua-version: '5.3'
-    luarocks-version: '3.3.1'
+    lua-version: '5.4'
+    luarocks-version: '3.4.0'
 ```
 
 ## License
