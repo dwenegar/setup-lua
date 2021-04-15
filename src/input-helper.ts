@@ -38,7 +38,8 @@ const LUAROCKS_VERSION_ALIASES: {[index: string]: string} = {
   '3.4': '3.4.0',
   '3.5': '3.5.0',
   '3.6': '3.6.0',
-  latest: '3.6.0'
+  '3.7': '3.7.0',
+  latest: '3.7.0'
 };
 
 export function getInputs(): Inputs {

@@ -7537,7 +7537,8 @@ const LUAROCKS_VERSION_ALIASES = {
     '3.4': '3.4.0',
     '3.5': '3.5.0',
     '3.6': '3.6.0',
-    latest: '3.6.0'
+    '3.7': '3.7.0',
+    latest: '3.7.0'
 };
 function getInputs() {
     const luaVersion = core_1.getInput(constants_1.InputNames.LuaVersion, { required: true });
