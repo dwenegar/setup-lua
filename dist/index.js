@@ -7291,7 +7291,7 @@ function getLuaDownloadUrl(version) {
     const targetAssetName = `lua-${version}-${platform}-${arch}.${archiveSuffix}`;
     const major = semver.major(version);
     const minor = semver.minor(version);
-    return `https://github.com/luadevkit/lua${major}${minor}/releases/download/v${version}/${targetAssetName}`;
+    return `https://github.com/dwenegar/lua${major}${minor}/releases/download/v${version}/${targetAssetName}`;
 }
 function getLuarocksDownloadUrl(version) {
     const archiveSuffix = sys.getArchiveSuffix();
@@ -7489,15 +7489,16 @@ const LUA_VERSION_ALIASES = {
     '5.1': '5.1.4',
     '5.2': '5.2.4',
     '5.3': '5.3.6',
-    '5.4': '5.4.3',
-    latest: '5.4.3'
+    '5.4': '5.4.4',
+    latest: '5.4.4'
 };
 const LUAROCKS_VERSION_ALIASES = {
     '3.4': '3.4.0',
     '3.5': '3.5.0',
     '3.6': '3.6.0',
     '3.7': '3.7.0',
-    latest: '3.7.0'
+    '3.8': '3.8.0',
+    latest: '3.8.0'
 };
 function getInputs() {
     const luaVersion = core_1.getInput(constants_1.InputNames.LuaVersion, { required: true });

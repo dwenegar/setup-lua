@@ -22,7 +22,7 @@ function getLuaDownloadUrl(version: string): string {
   const targetAssetName: string = `lua-${version}-${platform}-${arch}.${archiveSuffix}`;
   const major = semver.major(version);
   const minor = semver.minor(version);
-  return `https://github.com/luadevkit/lua${major}${minor}/releases/download/v${version}/${targetAssetName}`;
+  return `https://github.com/dwenegar/lua${major}${minor}/releases/download/v${version}/${targetAssetName}`;
 }
 
 function getLuarocksDownloadUrl(version: string): string {
