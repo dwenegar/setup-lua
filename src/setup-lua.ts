@@ -53,7 +53,11 @@ export async function setupLua() {
 
       core.info(`Successfully setup Luarocks ${luarocksVersion}`);
     }
-  } catch (error) {
-    core.setFailed(error.message);
+  } catch (e) {
+    if (typeof e === 'string') {
+      core.setFailed(e);
+    } else if (e instanceof Error) {
+      core.setFailed(e.message);
+    }
   }
 }

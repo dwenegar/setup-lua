@@ -1,4 +1,3 @@
-import * as core from '@actions/core';
 import {getInput} from '@actions/core';
 import {InputNames} from './constants';
 import {Inputs} from './inputs';
@@ -17,7 +16,8 @@ const LUAROCKS_VERSION_ALIASES: {[index: string]: string} = {
   '3.6': '3.6.0',
   '3.7': '3.7.0',
   '3.8': '3.8.0',
-  latest: '3.8.0'
+  '3.9': '3.9.1',
+  latest: '3.9.1'
 };
 
 export function getInputs(): Inputs {
