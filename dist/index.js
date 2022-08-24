@@ -8850,7 +8850,7 @@ const LUAROCKS_VERSION_ALIASES = {
 function getInputs() {
     const luaVersion = core_1.getInput(constants_1.InputNames.LuaVersion, { required: true });
     const luarocksVersion = core_1.getInput(constants_1.InputNames.LuarocksVersion, { required: false });
-    const repoToken = core_1.getInput(constants_1.InputNames.RepoToken, { required: true });
+    const repoToken = core_1.getInput(constants_1.InputNames.RepoToken, { required: false });
     let resolvedLuaVersion = luaVersion;
     if (LUA_VERSION_ALIASES[luaVersion]) {
         resolvedLuaVersion = LUA_VERSION_ALIASES[luaVersion];
