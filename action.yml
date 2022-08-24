@@ -16,8 +16,7 @@ inputs:
   luarocks-version:
     description: 'Luarocks version to use.'
     required: false
-    default: 'none'
 
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
