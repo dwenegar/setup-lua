@@ -1,6 +1,6 @@
 {
   "name": "setup-lua",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "setup lua action",
   "main": "lib/main.js",
   "scripts": {
