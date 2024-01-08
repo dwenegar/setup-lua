@@ -6,8 +6,8 @@ const LUA_VERSION_ALIASES: {[index: string]: string} = {
   '5.1': '5.1.4',
   '5.2': '5.2.4',
   '5.3': '5.3.6',
-  '5.4': '5.4.4',
-  latest: '5.4.4'
+  '5.4': '5.4.6',
+  latest: '5.4.6'
 };
 
 const LUAROCKS_VERSION_ALIASES: {[index: string]: string} = {
@@ -16,8 +16,8 @@ const LUAROCKS_VERSION_ALIASES: {[index: string]: string} = {
   '3.6': '3.6.0',
   '3.7': '3.7.0',
   '3.8': '3.8.0',
-  '3.9': '3.9.1',
-  latest: '3.9.1'
+  '3.9': '3.9.2',
+  latest: '3.9.2'
 };
 
 export function getInputs(): Inputs {
