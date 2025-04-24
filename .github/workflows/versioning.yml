@@ -3,7 +3,13 @@ name: Keep the versions up-to-date
 on:
   release:
     types: [published]
-
+  push: # (1)
+    tags:
+      - 'v?[0-9]+.[0-9]+.[0-9]+'
+    branches-ignore:
+      - '**'
+    paths-ignore:
+      - '**'
 jobs:
   actions-tagger:
     runs-on: ubuntu-latest
