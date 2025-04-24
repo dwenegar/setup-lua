@@ -11,13 +11,13 @@ See [action.yml](action.yml)
 Install the latest version of Lua (5.4.4)
 
 ```yaml
-- uses: luadevkit/setup-lua
+- uses: dwenegar/setup-lua
 ```
 
 Install the latest version of Lua (5.4.4) and LuaRocks (3.9.1)
 
 ```yaml
-- uses: luadevkit/setup-lua
+- uses: dwenegar/setup-lua
   with:
     luarocks-version: latest
 ```
@@ -25,7 +25,7 @@ Install the latest version of Lua (5.4.4) and LuaRocks (3.9.1)
 Install specific versions of Lua and LuaRocks:
 
 ```yaml
-- uses: luadevkit/setup-lua
+- uses: dwenegar/setup-lua
   with:
     lua-version: '5.4'
     luarocks-version: '3.9.1'

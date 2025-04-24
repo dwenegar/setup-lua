@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luadevkit/setup-lua.git"
+    "url": "git+https://github.com/dwenegar/setup-lua.git"
   },
   "keywords": [
     "github",
@@ -22,9 +22,9 @@
   "author": "Simone Livieri <simone.livieri@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/luadevkit/setup-lua/issues"
+    "url": "https://github.com/dwenegar/setup-lua/issues"
   },
-  "homepage": "https://github.com/luadevkit/setup-lua#readme",
+  "homepage": "https://github.com/dwenegar/setup-lua#readme",
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/exec": "^1.0.4",
