@@ -20,10 +20,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup node 12
+      - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 20
 
       - name: npm install
         run: npm install
